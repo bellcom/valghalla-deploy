@@ -101,5 +101,4 @@ dependencies[] = valhalla_views
 dependencies[] = valhalla_nodes
 
 ;; Context
-dependencies[] = valhalla_front_page
-dependencies[] = valhalla_pages
+dependencies[] = valhalla_menu_blocks_context
