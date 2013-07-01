@@ -68,6 +68,7 @@ projects[ckeditor][version] = "1.13"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.2"
+projects[ctools][patch][] = "patches/ctools-fix-warning-message-1739718-32.patch"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.6"
