@@ -94,11 +94,11 @@ dependencies[] = valhalla_mail
 dependencies[] = valhalla_menus
 dependencies[] = valhalla_volunteers
 dependencies[] = valhalla_language_dansk
+dependencies[] = valhalla_nodes
 dependencies[] = valhalla_page_manager_handlers
 dependencies[] = valhalla_page_manager_pages
 dependencies[] = valhalla_user_roles
 dependencies[] = valhalla_views
-dependencies[] = valhalla_nodes
 
 ;; Context
 dependencies[] = valhalla_menu_blocks_context
