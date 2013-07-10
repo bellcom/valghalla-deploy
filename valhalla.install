@@ -64,9 +64,13 @@ function valhalla_install() {
       ),
     ),
   );
+
   $full_html_format = (object) $full_html_format;
   filter_format_save($full_html_format);
 
+  // Programmatically adding body field to Almindelig Side content type.
+  $types = node_type_get_types();
+  $node_add_body_field($types['page'], $label='Body');
 
   // Allow visitor account creation, but with administrative approval.
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
