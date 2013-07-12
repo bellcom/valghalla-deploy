@@ -68,10 +68,6 @@ function valhalla_install() {
   $full_html_format = (object) $full_html_format;
   filter_format_save($full_html_format);
 
-  // Programmatically adding body field to Almindelig Side content type.
-  $page = node_type_load('page');
-  node_add_body_field($page);
-  
   // Allow visitor account creation, but with administrative approval.
   // variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
 
@@ -87,7 +83,6 @@ function valhalla_install() {
 
   // Set default home page
   variable_set('site_frontpage', 'status');
-
 
   // Set default theme to Valhalla
   variable_set('theme_default', 'Valhalla');
