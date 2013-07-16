@@ -4,6 +4,8 @@
  * This file install the Valhalla profile.
  */
 
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+
 /**
  * Implements hook_install().
  *
