@@ -19,6 +19,7 @@ dependencies[] = contextual
 dependencies[] = ctools
 dependencies[] = ctools_access_ruleset
 dependencies[] = ctools_custom_content
+dependencies[] = ckeditor
 dependencies[] = dashboard
 dependencies[] = date
 dependencies[] = date_api
