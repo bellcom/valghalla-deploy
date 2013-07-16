@@ -95,4 +95,7 @@ function valhalla_install() {
   variable_set('date_default_timezone', "Europe/Berlin");
   variable_set('date_first_day', "1");
   variable_set('configurable_timezones', "0");
+
+  // Programmatically enable ckeditor module, since enabling through dependencies doesn't work.
+  module_enable(array('ckeditor'));
 }
