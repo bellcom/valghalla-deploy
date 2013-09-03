@@ -22,7 +22,7 @@ Installer Valhalla med drush make filer.
     Kør deploy script. Afhængig af hvilken profil der ønskes skal reroll.dev.sh eller reroll.sh køres. Alle moduler bliver hentet fra master branchen. Hold øje med dette under udvikling. Alle repositories er git repos.
 
 6. `./reroll.dev.sh` eller `./reroll.sh`. Kan tage meget lang tid at køre, da den henter alle moduler. Kan kræve sudo. Følg med i log om der sker fejl. Ved fejl på contrib moduler prøv evt igen, da det kan skyldes i dårlig håndtering fra Drush. Første gang reroll køres sker der til sidst mange fejl. Dette skyldes den foretager ting på database niveau. Den database vi endnu ikke har oprettet. :-) Dette er OK.
-7. Udfør `cp [web dir]/public_html/sites/default/default.settings.php [web dir]/public_html/sites/default/settings.php`
+7. Udfør `cp sites/default/default.settings.php sites/default/settings.php`
 8. Udfør `sudo chmod g+rwX /var/www/[dit domæne]`
 9. Udfør `sudo chgrp -R www-data /var/www/[dit domæne]`
 10. Installer sitet på `http://[dit domæne]/install.php`. Følg guiden, her skal du desuden bruge dine informationer til databasen.
