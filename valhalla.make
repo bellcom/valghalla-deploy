@@ -39,6 +39,9 @@ projects[features][version] = "1.0"
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = "1.0-alpha1"
 
+projects[field_collection][subdir] = "contrib"
+projects[field_collection][version] = "1.0-beta5"
+
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
@@ -55,7 +58,7 @@ projects[media][subdir] = "contrib"
 projects[media][version] = "2.0-unstable7"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.0-rc3"
+projects[entity][version] = "1.2"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.0"
