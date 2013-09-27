@@ -29,6 +29,6 @@ Installer Valhalla med drush make filer.
 10. Installer sitet på `http://[dit domæne]/install.php`. Følg guiden, her skal du desuden bruge dine informationer til databasen.
 11. Udfør `drush cc registry` og `drush cc all`.
 12. Udfør `chmod -w sites/default/settings.php sites/default/`
-13. Sæt cron op for sitet. `drush vget cron_key`. Gem key. `sudo crontab -u www-data -e` og indsæt: 0 * * * * /usr/bin/wget -O - -q -t 1 'https://<site>/cron.php?cron_key=<key>'
+13. Sæt cron op for sitet. `drush vget cron_key`. Gem key. `sudo crontab -u www-data -e` og indsæt (erstat SITE og KEY): `0 * * * * /usr/bin/wget -O - -q -t 1 'https://SITE/cron.php?cron_key=KEY'`
 
 Proceduren er at reroll.[].sh bruges når moduler skal opdateres fra origin.
