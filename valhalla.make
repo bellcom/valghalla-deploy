@@ -10,6 +10,10 @@ projects[valhalla][download][type] = "git"
 projects[valhalla][download][branch] = "master"
 projects[valhalla][download][url] = "git://github.com/bellcom/valhalla.git"
 
+; Valhalla translations
+projects[translations][download][type] = "file"
+projects[translations][download][url] = "git://github.com/bellcom/valhalla-deploy/da.po"
+
 ; Valhalla Themes
 projects[valhallatheme][type] = "theme"
 projects[valhallatheme][download][type] = "git"
