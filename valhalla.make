@@ -3,6 +3,9 @@ core = 7.x
 
 ;includes[custom] = valhalla.custom.make
 
+;Translations
+projects[valhalla][translations][] = da
+
 ; Valhalla Modules
 projects[valhalla][type] = "module"
 projects[valhalla][download][type] = "git"
@@ -20,12 +23,6 @@ projects[valhallatheme][download][url] = "git://github.com/bellcom/valhalla-them
 ; Adaptive Theme
 projects[adaptivetheme][type] = "theme"
 projects[adaptivetheme][version] = "1.2"
-
-; Valhalla translation
-projects[translation_da][type] = "profile"
-projects[translation_da][directory_name] = "translations"
-projects[translation_da][download][type] = "file"
-projects[translation_da][download][url] = "git://github.com/bellcom/valhalla-deploy/da.po"
 
 ; Libraries
 
