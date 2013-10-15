@@ -3,9 +3,6 @@ core = 7.x
 
 ;includes[custom] = valhalla.custom.make
 
-;Translations
-projects[valhalla][translations][] = da
-
 ; Valhalla Modules
 projects[valhalla][type] = "module"
 projects[valhalla][download][type] = "git"
