@@ -10,10 +10,6 @@ projects[valhalla][download][type] = "git"
 projects[valhalla][download][branch] = "master"
 projects[valhalla][download][url] = "git://github.com/bellcom/valhalla.git"
 
-; Valhalla translations
-projects[translations][download][type] = "file"
-projects[translations][download][url] = "git://github.com/bellcom/valhalla-deploy/da.po"
-
 ; Valhalla Themes
 projects[valhallatheme][type] = "theme"
 projects[valhallatheme][download][type] = "git"
@@ -24,6 +20,12 @@ projects[valhallatheme][download][url] = "git://github.com/bellcom/valhalla-them
 ; Adaptive Theme
 projects[adaptivetheme][type] = "theme"
 projects[adaptivetheme][version] = "1.2"
+
+; Valhalla translation
+projects[translation_da][type] = "profile"
+projects[translation_da][directory_name] = "translations"
+projects[translation_da][download][type] = "file"
+projects[translation_da][download][url] = "git://github.com/bellcom/valhalla-deploy/da.po"
 
 ; Libraries
 
