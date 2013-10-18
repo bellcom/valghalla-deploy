@@ -38,9 +38,6 @@ mkdir -p build/$BUILD_DIR
 
 drush make --no-gitinfofile -y --no-core --contrib-destination=build/$BUILD_DIR $PROFILE_SRC.make
 
-### Code below can be in seperate file. source execute file from here. ###
-# . ./deploy.sh
-
 if [ -d "build/$BUILD_DIR/modules" ]; then
 	# Drush make completed without errors. If modules doesnt exist, drush make failed.
 
@@ -48,35 +45,44 @@ if [ -d "build/$BUILD_DIR/modules" ]; then
 	cp $PROFILE_SRC.info build/$BUILD_DIR/$PROFILE_DST.info
 	cp $PROFILE_SRC.profile build/$BUILD_DIR/$PROFILE_DST.profile
 	cp $PROFILE_SRC.install build/$BUILD_DIR/$PROFILE_DST.install
-	cp $PROFILE_SRC.sql.gz build/$BUILD_DIR/db.sql.gz
 
 	# Move old build to previous
-	unlink build/$BUILD_DIR_PREV
-	mv build/$BUILD_DIR_LATEST build/$BUILD_DIR_PREV
+	if [ -e build/$BUILD_DIR_PREV ]; then
+    unlink build/$BUILD_DIR_PREV
+  fi
+	if [ -e build/$BUILD_DIR_LATEST ]; then
+	  mv build/$BUILD_DIR_LATEST build/$BUILD_DIR_PREV
+  fi
 	# Make new build the latest
 	ln -sf $BUILD_DIR build/$BUILD_DIR_LATEST
 
-	# Take a copy of the current database,
-	# and put it in the previous build. Code and database keeps together.
-	echo "Backing up the database..."
-		# TODO: skip basic tables like cache --structure-tables-key=#{tables}
-		# Will make the dump smaller.
-	drush sql-dump --root=$DRUPAL_ROOT --uri=$URI --gzip > build/$BUILD_DIR_PREV/sql-dump.$DATE.sql.gz
+  # dont run any drush commands if there is no connection to the database (like on the first reroll)
+	drush --root=$DRUPAL_ROOT --uri=$URI status | grep Database | grep -q Connected
+  if [ $? -eq 1 ]; then
+	  echo "Deploy Complete. No database found (not running any more drush commands)"
+  else
+	  # Take a copy of the current database,
+	  # and put it in the previous build. Code and database keeps together.
+	  echo "Backing up the database..."
+	  	# TODO: skip basic tables like cache --structure-tables-key=#{tables}
+	  	# Will make the dump smaller.
+	  drush sql-dump --root=$DRUPAL_ROOT --uri=$URI --gzip > build/$BUILD_DIR_PREV/sql-dump.$DATE.sql.gz
 
-	echo "Updating database... Site will go in maintenance mode!"
-	drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 1
-	drush --root=$DRUPAL_ROOT --uri=$URI updb
+	  echo "Updating database... Site will go in maintenance mode!"
+	  drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 1
+	  drush --root=$DRUPAL_ROOT --uri=$URI updb
 
-	# # Any additionally drush commands?
+	  # # Any additionally drush commands?
 
-	# Finnally clear the cache
-	echo "Clearing cache..."
-	drush --root=$DRUPAL_ROOT --uri=$URI cc registry
-	drush --root=$DRUPAL_ROOT --uri=$URI cc all
+	  # Finnally clear the cache
+	  echo "Clearing cache..."
+	  drush --root=$DRUPAL_ROOT --uri=$URI cc registry
+	  drush --root=$DRUPAL_ROOT --uri=$URI cc all
 
-	drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 0
+	  drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 0
 
-	echo "Deploy Complete. End of maintenance mode!"
+	  echo "Deploy Complete. End of maintenance mode!"
+  fi
 else
 	# Build failed, remove build
 	rm -rf build/$BUILD_DIR
