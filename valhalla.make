@@ -21,6 +21,12 @@ projects[valhallatheme][download][url] = "git://github.com/bellcom/valhalla-them
 projects[adaptivetheme][type] = "theme"
 projects[adaptivetheme][version] = "1.2"
 
+; Valhalla Translation
+libraries[translation][download][type] = "file"
+libraries[translation][download][url] = "da.po"
+libraries[translation][directory_name] = "translations"
+libraries[translation][destination] = ""
+
 ; Libraries
 
 libraries[ckeditor][download][type]= "get"
