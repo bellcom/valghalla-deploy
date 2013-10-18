@@ -54,9 +54,6 @@ projects[strongarm][version] = "2.0"
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.5"
 
-projects[views_bulk_operations][subdir] = "contrib"
-projects[views_bulk_operations][version] = "3.0-rc1"
-
 projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.0-alpha3"
 
@@ -106,9 +103,6 @@ projects[rules][version] = "2.3"
 projects[front][subdir] = "contrib"
 projects[front][version] = "2.4"
 
-projects[commerce][subdir] = "contrib"
-projects[commerce][version] = "1.0-beta3"
-
 projects[addressfield][subdir] = "contrib"
 projects[addressfield][version] = "1.0-beta4"
 
@@ -129,9 +123,6 @@ projects[email][version] = "1.2"
 
 projects[media][subdir] = "contrib"
 projects[media][version] = "1.3"
-
-projects[tcontact][subdir] = "contrib"
-projects[tcontact][version] = "1.x-dev"
 
 projects[uuid][subdir] = "contrib"
 projects[uuid][version] = "1.0-alpha4"
@@ -154,20 +145,11 @@ projects[backup_migrate][version] = "2.2"
 projects[diff][subdir] = "contrib"
 projects[diff][version] = "2.0"
 
-projects[gmap][subdir] = "contrib"
-projects[gmap][version] = "2.6"
-
 projects[imce][subdir] = "contrib"
 projects[imce][version] = "1.4"
 
-projects[domain][subdir] = "contrib"
-projects[domain][version] = "2.13"
-
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
-
-projects[ds][subdir] = "contrib"
-projects[ds][version] = "1.5"
 
 projects[i18n][subdir] = "contrib"
 projects[i18n][version] = "1.8"
@@ -175,9 +157,31 @@ projects[i18n][version] = "1.8"
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.4"
 
-; For varnish
-projects[varnish][subdir] = "contrib"
-projects[varnish][version] = "1.0-beta1"
+projects[l10n_update][subdir] = "contrib"
+projects[l10n_update][version] = "1.0-beta3"
 
-projects[expire][subdir] = "contrib"
-projects[expire][version] = "1.0-alpha3"
+; These modules aren't enabled after installing using the install profile. Do we really need them? Disabled 18/10 2013, mmh
+;projects[views_bulk_operations][subdir] = "contrib"
+;projects[views_bulk_operations][version] = "3.0-rc1"
+;
+;projects[tcontact][subdir] = "contrib"
+;projects[tcontact][version] = "1.x-dev"
+;
+;projects[varnish][subdir] = "contrib"
+;projects[varnish][version] = "1.0-beta1"
+;
+;projects[expire][subdir] = "contrib"
+;projects[expire][version] = "1.0-alpha3"
+;
+;projects[gmap][subdir] = "contrib"
+;projects[gmap][version] = "2.6"
+;
+;projects[domain][subdir] = "contrib"
+;projects[domain][version] = "2.13"
+;
+;projects[ds][subdir] = "contrib"
+;projects[ds][version] = "1.5"
+;
+;projects[commerce][subdir] = "contrib"
+;projects[commerce][version] = "1.0-beta3"
+
