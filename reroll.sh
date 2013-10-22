@@ -36,7 +36,8 @@ DRUPAL_ROOT=$(dirname `pwd`)/public_html
 
 mkdir -p build/$BUILD_DIR
 
-drush make --no-gitinfofile -y --no-core --contrib-destination=build/$BUILD_DIR $PROFILE_SRC.make
+# using --working-copy to get the full git clone and be able to push back
+drush make --working-copy --no-gitinfofile -y --no-core --contrib-destination=build/$BUILD_DIR $PROFILE_SRC.make
 
 if [ -d "build/$BUILD_DIR/modules" ]; then
 	# Drush make completed without errors. If modules doesnt exist, drush make failed.
