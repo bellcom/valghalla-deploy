@@ -160,6 +160,12 @@ projects[token][version] = "1.4"
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.0-beta3"
 
+; for sending HTML mails, mmh 23/10-2013
+projects[mimemail][subdir] = "contrib"
+projects[mimemail][version] = "1.0-beta1"
+projects[mailsystem][subdir] = "contrib"
+projects[mailsystem][version] = "2.34"
+
 ; These modules aren't enabled after installing using the install profile. Do we really need them? Disabled 18/10 2013, mmh
 ;projects[views_bulk_operations][subdir] = "contrib"
 ;projects[views_bulk_operations][version] = "3.0-rc1"
