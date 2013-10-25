@@ -31,3 +31,4 @@ Installer Valhalla med drush make filer.
 13. Sæt cron op for sitet. `drush vget cron_key`. Gem key. `sudo crontab -u www-data -e` og indsæt (erstat SITE og KEY): `0 * * * * /usr/bin/wget -O - -q -t 1 'https://SITE/cron.php?cron_key=KEY'`
 
 Proceduren er at reroll.[].sh bruges når moduler skal opdateres fra origin.
+
