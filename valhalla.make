@@ -40,7 +40,7 @@ projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = "1.13"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "1.0"
+projects[features][version] = "2.0"
 
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = "1.0-alpha1"
@@ -165,6 +165,11 @@ projects[mimemail][subdir] = "contrib"
 projects[mimemail][version] = "1.0-beta1"
 projects[mailsystem][subdir] = "contrib"
 projects[mailsystem][version] = "2.34"
+
+; allow some sites to use their own smtp server, mmh 31/10-2013
+projects[smtp][subdir] = "contrib"
+projects[smtp][version] = "1.0"
+
 
 ; These modules aren't enabled after installing using the install profile. Do we really need them? Disabled 18/10 2013, mmh
 ;projects[views_bulk_operations][subdir] = "contrib"
