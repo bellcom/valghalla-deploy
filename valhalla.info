@@ -30,7 +30,6 @@ dependencies[] = dblog
 dependencies[] = diff
 dependencies[] = email
 dependencies[] = entity
-dependencies[] = entity_uuid
 dependencies[] = entityreference
 dependencies[] = entityreference_prepopulate
 dependencies[] = features
@@ -50,7 +49,6 @@ dependencies[] = node_export
 dependencies[] = node_reference
 dependencies[] = number
 dependencies[] = options
-dependencies[] = og
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = panels_ipe
@@ -112,6 +110,14 @@ dependencies[] = valhalla_user_roles
 dependencies[] = valhalla_user_permissions
 dependencies[] = valhalla_views
 dependencies[] = valhalla_taxonomy_terms
+dependencies[] = valhalla_lists
+dependencies[] = valhalla_settings
+dependencies[] = liste_beskeder
+dependencies[] = liste_m_cpr_nummer
+dependencies[] = liste_valghalla_export
+dependencies[] = liste_frivillige_uden_email
+dependencies[] = liste_parti_oversigt
+
 
 ;; Context
 dependencies[] = valhalla_menu_blocks_context

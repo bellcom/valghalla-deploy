@@ -69,9 +69,6 @@ projects[entityreference][version] = "1.0"
 projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = "1.3"
 
-projects[entity_uuid][subdir] = "contrib"
-projects[entity_uuid][version] = "1.x-dev"
-
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = "1.13"
 
@@ -115,9 +112,6 @@ projects[message_notify][version] = "2.5"
 projects[locationmap][subdir] = "contrib"
 projects[locationmap][version] = "2.2"
 
-projects[og][subdir] = "contrib"
-projects[og][version] = "2.2"
-
 projects[email][subdir] = "contrib"
 projects[email][version] = "1.2"
 
@@ -126,9 +120,6 @@ projects[media][version] = "1.3"
 
 projects[uuid][subdir] = "contrib"
 projects[uuid][version] = "1.0-alpha4"
-
-projects[uuid_features][subdir] = "contrib"
-projects[uuid_features][version] = "1.0-alpha3"
 
 projects[role_delegation][subdir] = "contrib"
 projects[role_delegation][version] = "1.1"
