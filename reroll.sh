@@ -11,7 +11,9 @@
 # Run the script with URI infront:
 # URI=http://domain.tld ./reroll.sh
 #
-# Author: Anders Bryrup (andersbryrup@gmail.com)
+# @author Anders Bryrup <andersbryrup@gmail.com>
+# @copyright 2014 Syddjurs Kommune. See README.md at
+# https://github.com/os2web/valghalla-deploy
 
 DATE=`date +%Y%m%d%H%M`
 
@@ -40,52 +42,52 @@ mkdir -p build/$BUILD_DIR
 drush make --working-copy --no-gitinfofile -y --no-core --contrib-destination=build/$BUILD_DIR $PROFILE_SRC.make
 
 if [ -d "build/$BUILD_DIR/modules" ]; then
-	# Drush make completed without errors. If modules doesnt exist, drush make failed.
+  # Drush make completed without errors. If modules doesnt exist, drush make failed.
 
-	# Lets copy our drupal profile files
-	cp $PROFILE_SRC.info build/$BUILD_DIR/$PROFILE_DST.info
-	cp $PROFILE_SRC.profile build/$BUILD_DIR/$PROFILE_DST.profile
-	cp $PROFILE_SRC.install build/$BUILD_DIR/$PROFILE_DST.install
+  # Lets copy our drupal profile files
+  cp $PROFILE_SRC.info build/$BUILD_DIR/$PROFILE_DST.info
+  cp $PROFILE_SRC.profile build/$BUILD_DIR/$PROFILE_DST.profile
+  cp $PROFILE_SRC.install build/$BUILD_DIR/$PROFILE_DST.install
 
-	# Move old build to previous
-	if [ -e build/$BUILD_DIR_PREV ]; then
+  # Move old build to previous
+  if [ -e build/$BUILD_DIR_PREV ]; then
     unlink build/$BUILD_DIR_PREV
   fi
-	if [ -e build/$BUILD_DIR_LATEST ]; then
-	  mv build/$BUILD_DIR_LATEST build/$BUILD_DIR_PREV
+  if [ -e build/$BUILD_DIR_LATEST ]; then
+    mv build/$BUILD_DIR_LATEST build/$BUILD_DIR_PREV
   fi
-	# Make new build the latest
-	ln -sf $BUILD_DIR build/$BUILD_DIR_LATEST
+  # Make new build the latest
+  ln -sf $BUILD_DIR build/$BUILD_DIR_LATEST
 
   # dont run any drush commands if there is no connection to the database (like on the first reroll)
-	drush --root=$DRUPAL_ROOT --uri=$URI status | grep Database | grep -q Connected
+  drush --root=$DRUPAL_ROOT --uri=$URI status | grep Database | grep -q Connected
   if [ $? -eq 1 ]; then
-	  echo "Deploy Complete. No database found (not running any more drush commands)"
+      echo "Deploy Complete. No database found (not running any more drush commands)"
   else
-	  # Take a copy of the current database,
-	  # and put it in the previous build. Code and database keeps together.
-	  echo "Backing up the database..."
-	  	# TODO: skip basic tables like cache --structure-tables-key=#{tables}
-	  	# Will make the dump smaller.
-	  drush sql-dump --root=$DRUPAL_ROOT --uri=$URI --gzip > build/$BUILD_DIR_PREV/sql-dump.$DATE.sql.gz
+    # Take a copy of the current database,
+    # and put it in the previous build. Code and database keeps together.
+    echo "Backing up the database..."
+    # TODO: skip basic tables like cache --structure-tables-key=#{tables}
+    # Will make the dump smaller.
+    drush sql-dump --root=$DRUPAL_ROOT --uri=$URI --gzip > build/$BUILD_DIR_PREV/sql-dump.$DATE.sql.gz
 
-	  echo "Updating database... Site will go in maintenance mode!"
-	  drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 1
-	  drush --root=$DRUPAL_ROOT --uri=$URI updb
+    echo "Updating database... Site will go in maintenance mode!"
+    drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 1
+    drush --root=$DRUPAL_ROOT --uri=$URI updb
 
-	  # # Any additionally drush commands?
+    # # Any additionally drush commands?
 
-	  # Finnally clear the cache
-	  echo "Clearing cache..."
-	  drush --root=$DRUPAL_ROOT --uri=$URI cc registry
-	  drush --root=$DRUPAL_ROOT --uri=$URI cc all
+    # Finnally clear the cache
+    echo "Clearing cache..."
+    drush --root=$DRUPAL_ROOT --uri=$URI cc registry
+    drush --root=$DRUPAL_ROOT --uri=$URI cc all
 
-	  drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 0
+    drush --root=$DRUPAL_ROOT --uri=$URI vset maintenance_mode 0
 
-	  echo "Deploy Complete. End of maintenance mode!"
+    echo "Deploy Complete. End of maintenance mode!"
   fi
 else
-	# Build failed, remove build
-	rm -rf build/$BUILD_DIR
-	echo "Build Failed. Deploy terminated"
+  # Build failed, remove build
+  rm -rf build/$BUILD_DIR
+  echo "Build Failed. Deploy terminated"
 fi
