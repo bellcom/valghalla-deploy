@@ -8,9 +8,9 @@
 /**
  * Name of profile; visible in profile selection form.
  */
-define('PROFILE_NAME', 'Valhalla');
+define('PROFILE_NAME', 'Valghalla');
 
 /**
  * Description of profile; visible in profile selection form.
  */
-define('PROFILE_DESCRIPTION', 'Generisk Installation Valhalla.');
+define('PROFILE_DESCRIPTION', 'Generisk Installation Valghalla.');

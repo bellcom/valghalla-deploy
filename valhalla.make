@@ -1,21 +1,18 @@
 api = 2
 core = 7.x
 
-;includes[custom] = valhalla.custom.make
-
 ; Valhalla Modules
-projects[valhalla][type] = "module"
-projects[valhalla][download][type] = "git"
-;projects[valhalla][download][tag] = ""
-projects[valhalla][download][branch] = "master"
-projects[valhalla][download][url] = "git://github.com/bellcom/valhalla.git"
+projects[valghalla][type] = "module"
+projects[valghalla][download][type] = "git"
+projects[valghalla][download][branch] = "master"
+projects[valghalla][download][url] = "git://github.com/os2web/valghalla.git"
 
 ; Valhalla Themes
-projects[valhallatheme][type] = "theme"
-projects[valhallatheme][download][type] = "git"
-projects[valhallatheme][download][branch] = "master"
-projects[valhallatheme][download][tag] = ""
-projects[valhallatheme][download][url] = "git://github.com/bellcom/valhalla-theme.git"
+projects[valghalla-theme][type] = "theme"
+projects[valghalla-theme][download][type] = "git"
+projects[valghalla-theme][download][branch] = "master"
+projects[valghalla-theme][download][tag] = ""
+projects[valghalla-theme][download][url] = "git://github.com/os2web/valghalla-theme.git"
 
 ; Adaptive Theme
 projects[adaptivetheme][type] = "theme"
