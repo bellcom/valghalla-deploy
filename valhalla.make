@@ -7,6 +7,13 @@ projects[valghalla][download][type] = "git"
 projects[valghalla][download][branch] = "master"
 projects[valghalla][download][url] = "git://github.com/os2web/valghalla.git"
 
+; Valhalla Modules
+projects[valghalla_mail][type] = "module"
+projects[valghalla_mail][download][type] = "git"
+projects[valghalla_mail][download][branch] = "master"
+projects[valghalla_mail][download][url] = "git://github.com/bellcom/valghalla_mail.git"
+
+
 ; Valhalla Themes
 projects[valghalla-theme][type] = "theme"
 projects[valghalla-theme][download][type] = "git"
