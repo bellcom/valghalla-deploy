@@ -5,14 +5,14 @@ core = 7.x
 projects[valghalla][type] = "module"
 projects[valghalla][download][type] = "git"
 projects[valghalla][download][branch] = "master"
-projects[valghalla][download][url] = "git://github.com/os2web/valghalla.git"
+projects[valghalla][download][url] = "git://github.com/bellcom/valghalla.git"
 
 ; Valhalla Themes
 projects[valghalla-theme][type] = "theme"
 projects[valghalla-theme][download][type] = "git"
 projects[valghalla-theme][download][branch] = "master"
 projects[valghalla-theme][download][tag] = ""
-projects[valghalla-theme][download][url] = "git://github.com/os2web/valghalla-theme.git"
+projects[valghalla-theme][download][url] = "git://github.com/bellcom/valghalla-theme.git"
 
 ; Adaptive Theme
 projects[adaptivetheme][type] = "theme"
