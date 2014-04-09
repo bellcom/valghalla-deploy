@@ -1,11 +1,23 @@
 api = 2
 core = 7.x
 
-; Valhalla Modules
+; Valghalla Modules
 projects[valghalla][type] = "module"
 projects[valghalla][download][type] = "git"
 projects[valghalla][download][branch] = "master"
 projects[valghalla][download][url] = "git://github.com/bellcom/valghalla.git"
+
+; Valghalla Mail
+projects[valghalla_mail][type] = "module"
+projects[valghalla_mail][download][type] = "git"
+projects[valghalla_mail][download][branch] = "master"
+projects[valghalla_mail][download][url] = "git://github.com/bellcom/valghalla_mail.git"
+
+; Valghalla user_tools
+projects[valghalla_user_tools][type] = "module"
+projects[valghalla_user_tools][download][type] = "git"
+projects[valghalla_user_tools][download][branch] = "master"
+projects[valghalla_user_tools][download][url] = "git://github.com/bellcom/valghalla_user_tools.git"
 
 ; Valhalla Themes
 projects[valghalla-theme][type] = "theme"
