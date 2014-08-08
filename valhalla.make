@@ -91,3 +91,9 @@ projects[bootstrap][version] = "3.0"
 projects[valghalla_bs_theme][download][type] = "git"
 projects[valghalla_bs_theme][download][url] = "git://github.com/bellcom/valghalla_bs_theme.git"
 projects[valghalla_bs_theme][type] = "theme"
+
+; Libraries
+libraries[ckeditor][download][type]= "get"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.1.2/ckeditor_4.1.2_standard.zip"
+libraries[ckeditor][directory_name] = "ckeditor"
+libraries[ckeditor][destination] = "modules/contrib/ckeditor"
